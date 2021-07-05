@@ -1,0 +1,26 @@
+
+*{
+    font-family: Poppins (sans-serif);
+
+}
+
+.btn-lg {
+    border-radius: 10px;
+    background: #61297c;
+    color: white;
+    height: 45px;
+    font-size: 12pt;
+    box-shadow: #d6d2c4 5px 5px 7px;
+  }
+  
+  .btn-lg:hover {
+    background: #ffbf13;
+    border-color: #ffbf13;
+    color: black;
+    font-weight: bold;
+  }
+
+  html {
+
+    scroll-behavior: smooth;
+  }

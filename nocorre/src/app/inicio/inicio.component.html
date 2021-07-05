@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+<form class="ml-5 mr-5">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="tiulo">Titulo:</label>
+        <input type="text" class="form-control" id="titulo" placeholder="Título">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="profissional">Profissional:</label>
+        <input type="text" class="form-control" id="profissional" placeholder="Informe o nome do profissional que prestará o serviço">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="valorHora">Valor/hora:</label>
+      <input type="text" class="form-control" id="valorHora" placeholder="14.50">
+    </div>
+    <div class="form-group">
+      <label for="qtdeHoras">Tempo de duração do serviço em horas:</label>
+      <input type="text" class="form-control" id="qtdeHoras" placeholder="45">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="custoMedio">Em média, quanto você gastará para realização do serviço:</label>
+        <input type="text" class="form-control" id="custoMedio" placeholder="120.00">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="imagem">Adicionar foto a publicação:</label>
+        <input type="text" class="form-control" id="imagem" placeholder="Utilize um link para adicionar uma foto">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Declaro que todas as informações estão corretas.
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)='cadastrar()'>CADASTRAR</button>
+  </form>
+<div class="container" id="servicos">
+
+    <ul class="nav nav-tabs d-flex justify-content-center font-weight-bold" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#CatalogoDeServicos" role="tab" aria-controls="CatalogoDeServicos" aria-selected="true">CATÁLOGO DE SERVIÇOS</a>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="CatalogoDeServicos">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card-columns">
+
+                <div class="card" *ngFor='let item of listaServico' style="width: 18rem;">
+                    <img class="card-img-top" src={{item.imagem}} alt="Imagem de capa do card">
+                    <div class="card-body">
+                      <h4 class="card-title">{{item.titulo}}</h4>
+                      <h5 class="card-text">Profissional: {{item.profissional}}</h5>
+                      <p class="card-text">Carga horária do serviço: {{item.qtdeHoras}} </p>
+                      <p class="card-text">Taxa adicional: 5%</p>
+                      <a href="#" class="btn btn-primary">CONTRATAR</a>
+                    </div>
+
+            </div>
+
+
+        </div>
+
+      </div>
+</div>
+<app-rodape></app-rodape>
